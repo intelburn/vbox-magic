@@ -45,7 +45,7 @@ while true; do
 					Bridge)
 						echo "case Bridged"
 						echo "What do you want to bridge to?"
-						select iface in $(ifconfig | grep flags | cut -d':' -f1); do
+						select iface in $(ip a | grep mtu | cut -d' ' -f 2 | cut -d ':' -f 1 | cut -d'@' -f 1); do
 							vboxmanage modifyvm $VMUUID --nic$NICNum bridged
 							vboxmanage modifyvm $VMUUID --bridgeadapter$NICNum $iface
 							echo "Which promisc mode?"
