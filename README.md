@@ -1,4 +1,4 @@
 # Intro
 
-This is where automation for Orcal VirtualBox will live.
+This is where automation for Orcale VirtualBox will live.
 Scripts assume a Linux Host OS
