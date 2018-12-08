@@ -2,9 +2,7 @@
 #Change the separator from space to newline
 OldIFS=$IFS
 IFS=$'\n'
-echo "about to enter VM loop"
 while true; do
-	echo "entered VM loop"
 	#Make Usere select from VMs
 	echo "Which VM do you want to modify?"
 	select VMName in $(vboxmanage list vms | cut -d' ' -f 1); do
@@ -38,12 +36,10 @@ while true; do
 						;;
 					#Remove the NIC from the the VM
 					None)
-						echo "case none"
 						vboxmanage modifyvm $VMUUID --nic$NICNum none
 						break
 						;;
 					Bridge)
-						echo "case Bridged"
 						echo "What do you want to bridge to?"
 						select iface in $(ip a | grep mtu | cut -d' ' -f 2 | cut -d ':' -f 1 | cut -d'@' -f 1); do
 							vboxmanage modifyvm $VMUUID --nic$NICNum bridged
@@ -89,11 +85,10 @@ while true; do
 						break
 						;;
 					*)
-						echo "Something broke. NICType is $NICType"
+						echo "Something broke."
 						break
 						;;
 				esac
-
 			done
 				echo "Configure another NIC Y/n?"
 				read NICSelect
