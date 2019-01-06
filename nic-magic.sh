@@ -4,11 +4,10 @@ OldIFS=$IFS
 IFS=$'\n'
 echo "about to enter VM loop"
 while true; do
-	echo "entered VM loop"
 	#Make Usere select from VMs
 	echo "Which VM do you want to modify?"
-	select VMName in $(vboxmanage list vms | cut -d' ' -f 1); do
-		VMUUID=$(vboxmanage list vms | grep $VMName |  cut -d' ' -f 2)
+	select VMName in $(vboxmanage list vms | cut -d'""' -f 2); do
+		VMUUID=$(vboxmanage list vms | grep $VMName | cut -d'"' -f 3 | cut -d' ' -f 2)
 		#set up the loop so that the user config multiple NICs for the selected VM
 		while true; do
 			#Get NIC to configure from user
