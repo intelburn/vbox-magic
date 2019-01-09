@@ -16,3 +16,7 @@ NOTE: If you are using the PIIX3 chipset for the VM you will only be able to use
 ## vm-export.sh
 
 This script is designed to bulk export all of the VMs belonging to a group as individual OVAs
+
+## vm-import.sh
+
+This script is designed to bulk import all of the OVAs in a directory into VirtualBox
