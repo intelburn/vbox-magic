@@ -5,7 +5,7 @@ Scripts assume a Linux Host OS
 
 ## Background
 
-VirtualBox has a robust command line. However it is rather annoying to handjam a bunch of commands in using these tools. So I am writing a series of scripts to make using VirtualBox from the command line a bit easier. See https://www.virtualbox.org/manual/ch09.html for more information.
+VirtualBox has a robust command line. However it is rather annoying to handjam a bunch of commands in using these tools. So I am writing a series of scripts to make using VirtualBox from the command line a bit easier. See https://www.virtualbox.org/manual/ch08.html for more information.
 
 ## nic-magic.sh
 
@@ -20,3 +20,7 @@ This script is designed to bulk export all of the VMs belonging to a group as in
 ## vm-import.sh
 
 This script is designed to bulk import all of the OVAs in a directory into VirtualBox
+
+## group-members.sh
+
+This is a script that will return the same style of output as vboxmanage list vms, but only if a VM belongs to a group as input by the use.
