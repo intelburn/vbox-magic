@@ -1,0 +1,2 @@
+Every now and then we get requirements wherein we need to create another VM from a base VM, in that case just copy the VDI to another folder and run this command on it and its ready to use for building new VMs
+vboxmanage internalcommands sethduuid "vdi path".
