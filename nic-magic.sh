@@ -112,7 +112,7 @@ while true; do
 					esac
 				done
 				echo "What kind of NIC hardware do you want? (If you selected a type of None then this doesn't matter)"
-				select HWType in "PCNet PCI II (Am79C970A)" "PCNet FAST III (Am79C973)" "Intel PRO/1000 MT Desktop (82540EM)" "Intel PRO/1000 T Server (82543GC)" "Intel PRO/1000 MT Server (82545EM)" "Paravirtualized network adapter (virtio-net)"; do
+				select HWType in "PCNet PCI II (Am79C970A)" "PCNet FAST III (Am79C973)" "Intel PRO/1000 MT Desktop (82540EM)" "Intel PRO/1000 T Server (82543GC)" "Intel PRO/1000 MT Server (82545EM)" "Paravirtualized network adapter (virtio)"; do
 					HWString=$(echo -n $HWType | cut -d"(" -f 2 | tr -d ")")
 					vboxmanage modifyvm $VMUUID --nictype$NICNum $HWString
 					#Break out of HWType select loop
