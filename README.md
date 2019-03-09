@@ -24,3 +24,7 @@ This script is designed to bulk import all of the OVAs in a directory into Virtu
 ## group-members.sh
 
 This is a script that will return the same style of output as vboxmanage list vms, but only if a VM belongs to a group as input by the use.
+
+## compact-hdds.sh
+
+This goes through the disks on VMs and automatically removes large areas of zeros (0x00) from the VDI files, thus potentially freeing up gigabytes of space
