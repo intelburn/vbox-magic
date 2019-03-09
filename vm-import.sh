@@ -6,6 +6,6 @@ ImportDir=/home/$(whoami)/Documents
 #Loop through all of the .ova files in $ImportDir
 for ova in $ImportDir/*.ova; do
     #Import one of the .ova files
-    vboxmanage import $ova
+    vboxmanage import --options importtovdi $ova
 #End the ova for loop
 done
